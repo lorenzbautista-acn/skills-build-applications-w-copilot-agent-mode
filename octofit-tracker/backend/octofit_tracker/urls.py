@@ -17,10 +17,15 @@ Including another URLconf
 
 # Codespace URL reference for workflow check: https://<your-codespace-id>-8000.app.github.dev
 # The backend is expected to be accessible at port 8000
+
+import os
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
+from rest_framework.response import Response
+from rest_framework.decorators import api_view
 from . import views
+
 
 router = DefaultRouter()
 router.register(r'users', views.UserViewSet, basename='user')
@@ -29,8 +34,18 @@ router.register(r'activities', views.ActivityViewSet, basename='activity')
 router.register(r'workouts', views.WorkoutViewSet, basename='workout')
 router.register(r'leaderboard', views.LeaderboardViewSet, basename='leaderboard')
 
+# API root that returns the full REST API URL using $CODESPACE_NAME
+@api_view(['GET'])
+def api_root(request):
+    codespace_name = os.environ.get('CODESPACE_NAME')
+    if codespace_name:
+        api_url = f"https://{codespace_name}-8000.app.github.dev/api/"
+    else:
+        api_url = "http://localhost:8000/api/"
+    return Response({"api_url": api_url})
+
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', views.api_root, name='api-root'),
+    path('', api_root, name='api-root'),
     path('api/', include(router.urls)),
 ]
