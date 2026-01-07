@@ -1,0 +1,123 @@
+
+.App {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  color: #22223b;
+  font-family: 'Segoe UI', 'Roboto', 'Arial', sans-serif;
+}
+
+
+.octofit-logo {
+  height: 48px;
+  width: auto;
+  margin-right: 12px;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+
+.App-header {
+  background: rgba(40, 44, 52, 0.85);
+  border-radius: 16px;
+  margin: 32px auto 0 auto;
+  padding: 32px 24px 24px 24px;
+  max-width: 700px;
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+  color: #f2e9e4;
+  text-align: center;
+}
+
+
+.App-link, .octofit-navbar .nav-link, .octofit-navbar .navbar-brand {
+  color: #4ea8de !important;
+  transition: color 0.2s;
+}
+
+.App-link:hover, .octofit-navbar .nav-link:hover, .octofit-navbar .navbar-brand:hover {
+  color: #4361ee !important;
+  text-decoration: underline;
+}
+/* Navigation Bar */
+.octofit-navbar {
+  background: linear-gradient(90deg, #22223b 0%, #4ea8de 100%);
+  padding: 0.5rem 2rem;
+  margin-bottom: 0;
+  box-shadow: 0 2px 8px rgba(34, 34, 59, 0.08);
+}
+
+.octofit-navbar .navbar-brand span {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #f2e9e4;
+}
+
+.octofit-navbar .nav-link {
+  font-size: 1.1rem;
+  margin-left: 1.5rem;
+  color: #f2e9e4 !important;
+}
+
+/* Headings */
+.octofit-heading {
+  color: #4ea8de;
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5em;
+}
+
+/* Description */
+.octofit-description {
+  color: #b5c0d0;
+  font-size: 1.2rem;
+  margin-bottom: 1.5em;
+}
+
+/* Buttons */
+.octofit-btn, .btn-primary {
+  background: linear-gradient(90deg, #4ea8de 0%, #4361ee 100%);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 24px;
+  padding: 0.5em 2em;
+  box-shadow: 0 2px 8px rgba(34, 34, 59, 0.08);
+  transition: background 0.2s;
+}
+
+.octofit-btn:hover, .btn-primary:hover {
+  background: linear-gradient(90deg, #4361ee 0%, #4ea8de 100%);
+  color: #fff;
+}
+
+/* Tables */
+.octofit-table {
+  background: #f2e9e4;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(34, 34, 59, 0.08);
+}
+.octofit-table th {
+  background: #4ea8de;
+  color: #fff;
+  font-weight: 700;
+}
+.octofit-table td {
+  background: #e0e1dd;
+  color: #22223b;
+}
+.octofit-table tr:nth-child(even) td {
+  background: #b5c0d0;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
