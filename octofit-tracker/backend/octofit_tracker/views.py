@@ -33,10 +33,12 @@ def api_root(request, format=None):
         base_url = f"https://{codespace_name}-8000.app.github.dev/api/"
     else:
         base_url = request.build_absolute_uri('/api/')
+    # Always use Codespace URL if available
     return Response({
         'users': base_url + 'users/',
         'teams': base_url + 'teams/',
         'activities': base_url + 'activities/',
         'workouts': base_url + 'workouts/',
         'leaderboard': base_url + 'leaderboard/',
+        'api_base': base_url,
     })
