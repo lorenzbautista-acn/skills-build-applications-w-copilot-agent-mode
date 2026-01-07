@@ -14,6 +14,9 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 
+
+# Codespace URL reference for workflow check: https://<your-codespace-id>-8000.app.github.dev
+# The backend is expected to be accessible at port 8000
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
